@@ -104,8 +104,22 @@ Para esta parte práctica, se deberá hacer al menos dos instalaciones de GNU/Li
 
 Realizado y documentado en el anexo, Todo y que en la inhalación de los sistemas ubuntu 18.04 y fedora workstation 29 no he tendió problemas con ningún adaptador ni dispositivo cuando he instalado ubuntu en algún portátil he tenido problemas con las tarjetas gráfica nvidia y algunos adaptadores de wifi nada que con descargase los controladores adicionales públicos o privativos no pudiera solucionar
 
-\subsection{b. Examinar el sistema de ficheros y realizar una tabla comparativa de: qué diferencias han detectado entre las dos instalaciones? Qué ocupación del disco tienen – y, si hay variaciones, como las pueden explicar?}
-ejecutamos:
+\subsection{b. Examinar el sistema de ficheros y realizar una tabla comparativa de: qué diferencias han detectado entre las dos instalaciones? Qué ocupación del disco tienen – y, si hay variaciones, como las pueden explicar?} 
+\footnote{Son dos maquinas diferentes, ja que tengo 2 en el ordenador del trabado y 2 en el personal} Comparamos las estructuras de ficheros con un tree -L 2 / 
+
+\begin{tabular}{ |p{7cm}||p{7cm}| }
+    \hline
+    \multicolumn{2}{|c|}{Diferencias} \\
+    \hline
+    Ubuntu& Fedora\\
+    \hline
+   	bin   & bin -\textgreater  usr/bin   \\
+    grub &   grub2 \\
+    469 directories, 680 files & 	483 directories, 360 files \\
+    \hline
+\end{tabular}
+
+Ja podemos observar que la gestión del /bin es diferente, ubuntu dispone de un /bin como carpeta donde ahí un montón de aplicaciones para todos los ususarios maestras que fedora la vincula con usr/bin para las aplicaciones por usuario, La gestión del cargador de arranque en la carpeta bot podemos observar casi los mismos paquetes en versiones diferentes con una actualización más en fedora
 
 
 \clearpage
