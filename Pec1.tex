@@ -7,6 +7,9 @@
 \usepackage{tikz} % Package for drawing
 \usepackage{amsmath}
 \usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{listings}
+
 
 \journal{PEC1}
 \begin{document}
@@ -101,20 +104,18 @@ Para esta parte práctica, se deberá hacer al menos dos instalaciones de GNU/Li
 
 Realizado y documentado en el anexo, Todo y que en la inhalación de los sistemas ubuntu 18.04 y fedora workstation 29 no he tendió problemas con ningún adaptador ni dispositivo cuando he instalado ubuntu en algún portátil he tenido problemas con las tarjetas gráfica nvidia y algunos adaptadores de wifi nada que con descargase los controladores adicionales públicos o privativos no pudiera solucionar
 
-\subsection{b. Examinar el sistema de ficheros y realizar una tabla comparativa de: qué
-diferencias han detectado entre las dos instalaciones? Qué ocupación del
-disco tienen – y, si hay variaciones, como las pueden explicar?
-}
+\subsection{b. Examinar el sistema de ficheros y realizar una tabla comparativa de: qué diferencias han detectado entre las dos instalaciones? Qué ocupación del disco tienen – y, si hay variaciones, como las pueden explicar?}
+ejecutamos:
 
 
 \clearpage
 \section{bibliografía}
     \textbf{URLS:}
     \begin{itemize}
-        \item https://www.suse.com
-        \item https://www.getfedora.org
-        \item https://www.debian.org/
-        \item https://distrowatch.com
+        \item web del proyecto suse https://www.suse.com consulta 30/oct/2018
+        \item web del proyecto getfedora https://www.getfedora.org consulta 30/oct/2018
+        \item web del proyecto debian  https://www.debian.org consulta 30/oct/2018
+        \item Web de consulta de distribuciones https://distrowatch.com consulta 30/oct/2018
     \end{itemize}
 
 \clearpage
@@ -122,21 +123,21 @@ disco tienen – y, si hay variaciones, como las pueden explicar?
 \subsection{Ubuntu 18.04}
 \begin{figure}[!htbp]
     \begin{center}
-        \includegraphics[width=11cm]{ubuntu1.JPG}
+        \includegraphics[width=11cm]{anex/ubuntu1.JPG}
     \end{center}
     \caption{Escogemos si lo probamos o lo instalamos y la distribución del teclado}
     \begin{center}
-        \includegraphics[width=11cm]{ubuntu2.JPG}
+        \includegraphics[width=11cm]{anex/ubuntu2.JPG}
     \end{center}
     \caption{Una vez seleccionado el idioma escomeremos la distribución del teclado y procedemos al tipo de instalación que queremos, y si deseamos incluir programas de 3r (que pueden contener licencias privativas)}
 \end{figure}
 \begin{figure}[!htbp]
     \begin{center}
-        \includegraphics[width=11cm]{ubuntu3.JPG}
+        \includegraphics[width=11cm]{anex/ubuntu3.JPG}
     \end{center}
     \caption{Nos permite selección un formateo del disco automático o escoger el formato que no nosotros queremos}
     \begin{center}
-        \includegraphics[width=11cm]{ubuntu4.JPG}
+        \includegraphics[width=11cm]{anex/ubuntu4.JPG}
     \end{center}
     \caption{Podemos configurar las particiones en el formato que queramos una partición para todo el sistema o frentes particiones para las carpetas generales}
 \end{figure}
@@ -145,11 +146,11 @@ Haremos unas configuraciones básicas de nombre de usuario y credenciales nombre
 
 \begin{figure}[!htbp]
     \begin{center}
-        \includegraphics[width=11cm]{ubuntu5.JPG}
+        \includegraphics[width=11cm]{anex/ubuntu5.JPG}
     \end{center}
     \caption{,ejecución del comando uname -a y un ping a google.com}
     \begin{center}
-        \includegraphics[width=11cm]{ubuntu6.JPG}
+        \includegraphics[width=11cm]{anex/ubuntu6.JPG}
     \end{center}
     \caption{comprobación de una noticia de la vanguardia \newline https://www.lavanguardia.com/internacional/20181030/452657349845/siria-campamento-rukban-hambre-frio.html}
 \end{figure}
@@ -158,11 +159,21 @@ Haremos unas configuraciones básicas de nombre de usuario y credenciales nombre
 \subsection{Fedora 29}
 \begin{figure}[!htbp]
     \begin{center}
-        \includegraphics[width=11cm]{fedora3.JPG}
+        \includegraphics[width=11cm]{anex/fedora1.JPG}
+    \end{center}
+    \caption{Pantalla inicial de la inhalación de fedroa podemos instalar o probar }
+    \begin{center}
+        \includegraphics[width=11cm]{anex/fedora2.JPG}
+    \end{center}
+    \caption{Configuración del disco podemos dejarlo en automático personalizado vamos a realizar la misma configuración que con el ubuntu}
+\end{figure}
+\begin{figure}[!htbp]
+    \begin{center}
+        \includegraphics[width=11cm]{anex/fedora3.JPG}
     \end{center}
     \caption{Podemos configurar las particiones en el formato que queramos una partición para todo el sistema o frentes particiones para las carpetas generales}
     \begin{center}
-        \includegraphics[width=11cm]{fedora4.JPG}
+        \includegraphics[width=11cm]{anex/fedora4.JPG}
     \end{center}
     \caption{Al iniciar nos pedirá la configuran del usuario y podremos comenzar a usar el sistema, ejecución del comando uname -a i ping + la vanguardia }
 \end{figure}
