@@ -248,14 +248,14 @@ la documentación del capítulo (Nivel usuario).}
 \section{En cada caso, explicar que hacen los siguientes comandos o dar el
 comando/s que realiza la acción propuesta: }
 
-\subsection{Imprime por pantalla las líneas que tiene el tercer parámetro o ID más pequeño que 512 o que el cuarto parametro o ID del grupo mayor que 30,  podríamos cambiar el comando y dejándolo un poco más claro}
+\subsection{Imprime por pantalla las líneas que tiene el tercer parámetro o ID más pequeño que 512 o que el cuarto parámetro o ID del grupo mayor que 30,  podríamos cambiar el comando y dejándolo un poco más claro}
 \begin{lstlisting}[language=bash]
 awk -F: '($3 > 512 || $4 > 30)' /etc/passwd  
 \end{lstlisting}
 
-\subsection{Da la hora pero, lo que hacemos es crear un fixero temporal para guardar el comando, cambiarle los permisos y ejecutarlo se podría simplificar con el comando directo}
+\subsection{Da la hora pero, lo que hacemos es crear un fichero temporal para guardar el comando, cambiarle los permisos y ejecutarlo se podría simplificar con el comando directo}
 
-\subsection{Da la hora pero, lo que hacemos es crear un archivo temporal para guardar el comando, cambiarle los permisos y ejecutarlo, se podría simplificar con el comando directo, le damos los permisos de lectura y ejecución más el S que determina que se ejecuta con el usuario que lo creo, puede ser útil si no queremos dar mayores permisos a un grupo para ejecutar un comando y le preparamos un scrip para realizar la tarea}
+\subsection{Da la hora pero, lo que hacemos es crear un archivo temporal para guardar el comando, cambiarle los permisos y ejecutarlo, se podría simplificar con el comando directo, le damos los permisos de lectura y ejecución más el S que determina que se ejecuta con el usuario que lo creo, puede ser útil si no queremos dar mayores permisos a un grupo para ejecutar un comando y le preparamos un script para realizar la tarea}
 
 \subsection{}
 
@@ -279,7 +279,7 @@ ls -lhR /usr  2> /dev/null | awk '{if($3!="")print $5 "\t" $9}' | sort -rh | hea
 
 \end{lstlisting}
 
-Realismo el ls eliminado las rasquetas erróneas normalmente por permisos de lectura del usuario actual filtramos las líneas que no tenga 3r argumento que son las carpetas y re ordenamos las columnas las ordenamos y mostramos las 24 primeras líneas, como dato curio he tirado el comando en la raíz / i ha aparecido un fichero curioso 
+Realismo el las eliminado las rasquetas erróneas normalmente por permisos de lectura del usuario actual filtramos las líneas que no tenga 3r argumento que son las carpetas y re ordenamos las columnas las ordenamos y mostramos las 24 primeras líneas, como dato curio he tirado el comando en la raíz / i ha aparecido un fichero curioso 
 \begin{lstlisting}[language=bash,  basicstyle=\tiny,]
 [marc@localhost ~]$ ls -lh /proc/kcore
 -r--------. 1 root root 128T 5 nov. 06:21 /proc/kcore
