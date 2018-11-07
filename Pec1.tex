@@ -123,7 +123,7 @@ Realizado y documentado en el anexo, Todo y que en la inhalación de los sistema
 
 Ja podemos observar que la gestión del /bin /lib / lib64 y /sbin es diferente, Ubuntu tira más de la carpeta como tal y en Fedora tienen enlaces simbólicos a las carpetas de /usr donde tiene los ficheros, Ubuntu los tiene divididos en las dos, comento el Grupb ja que Ubuntu tiene más paquetes y a una versión anterior a los que integra Fedora, podemos observar algunas diferencias más, como que en /var Fedora tiene más directorios o que en general tiene menos ficheros. \bigskip
 
-Comprobación del uso del disco de Febdora y Ubuntu actualizados en día 31/10/2018:
+Comprobación del uso del disco de Fedora y Ubuntu actualizados en día 31/10/2018:
 \begin{lstlisting}[ basicstyle=\tiny,]
     [marc@localhost ~]$ df -h
     S. fitxers               Mida En ús Lliure  %Ús Muntat a
@@ -160,7 +160,7 @@ Comprobación del uso del disco de Febdora y Ubuntu actualizados en día 31/10/2
     tmpfs            97M   48K   97M   1% /run/user/1000
 
 \end{lstlisting}
-Podemos observar que el uso de disco no es tan diferente los dos consumen unos 5,2GB en el /, que es la raíz principal sel sistema, vemos que ubuntu usa los dispositivos loop para acceder a ficheros como dispositivo de bloques 
+Podemos observar que el uso de disco no es tan diferente los dos consumen unos 5,2GB en el /, que es la raíz principal sel sistema, vemos que Ubuntu usa los dispositivos loop para acceder a ficheros como dispositivo de bloques 
 
 \subsection{También incluir en esta tabla si se han creado los mismos usuarios y grupos? Examinar el contenido de los ficheros /etc/passwd y /etc/group, así como los derechos de acceso de los ficheros de configuración (en el directorio /etc) y extraer conclusiones.}
 
@@ -169,7 +169,7 @@ Las salidas de los comandos cat /etc/passwd y cat /etc/group en el anexo, para p
 root:x:0:0:root:/root:/bin/bash\newline
 marc:x:1000:1000:marc,,,:/home/marc:/bin/bash
 \end{lstlisting}
-root es el nombre de usuario, el siguiente valor es la contraseña x significa que esta enchipada y guardada en /etc/shadow file, los siguientes valores son el userID y el grupID, un comentario y el Home del usuario y la terminal
+root es el nombre de usuario, el siguiente valor es la contraseña x significa que esta encriptada y guardada en /etc/shadow file, los siguientes valores son el userID y el grupID, un comentario y el Home del usuario y la terminal
 
 Tenemos una lista de usuarios comunes todo y que en grupos o IDs diferentes cuando veamos el /etc/group veremos si se comportan de forma diferente, todo y que puede ser los mismos creados de forma diferente, aparte tenemos que Fedora dispone de más usuarios directamente algunos preparados para algún servicio o concreto como FTP, OpenVPN o Apache entre otros
 
