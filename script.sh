@@ -7,6 +7,11 @@ NEXT=false
 LISTADO=false
 INFORMA=false
 
+get_date() {
+    date --utc --date="$1" +"%Y-%m-%d %H:%M:%S"
+}
+
+
 #Echo de esta forma antes de leer los comentarios en el foro del error de -u a -uu
 # obtencion de los paramentos
 for var in "$@"; do
@@ -67,8 +72,33 @@ if $LISTADO; then
 fi
 
 if $INFORMA; then
-  #statements
-fi
+  for user in $USERS; do
+    lastloguins=$(sudo last --time-format iso $user  | tr '\t(' '\t ' | tr ')\t\n' '\n '|  awk '{if ($1!="wtmp") if($1!="reboot") print $1"-"$2"-"$7"_"$4}')
+    array=(${lastloguins//&/ })
+    for i in "${!array[@]}";do
+      log=$(echo "${array[i]}")
+      echo $log
+      Loguindate=$(echo $log | awk -F '_' '{print $2}' | awk -F 'T' '{print $1}')
+      limitdate=$(date --iso-8601 -d 'now + 7 days')
+      echo "$Loguindate < $limitdate"
+      if [[ "$Loguindate" < "$limitdate" ]]; then
+        echo "Statement is true"
+      else
+        echo "Statement is false"
+      fi
+
+    done
+  done
+
+
 
 
 exit 0
+
+
+
+
+
+
+
+fi
