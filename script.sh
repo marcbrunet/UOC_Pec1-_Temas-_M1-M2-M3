@@ -7,11 +7,6 @@ NEXT=false
 LISTADO=false
 INFORMA=false
 
-get_date() {
-    date --utc --date="$1" +"%Y-%m-%d %H:%M:%S"
-}
-
-
 #Echo de esta forma antes de leer los comentarios en el foro del error de -u a -uu
 # obtencion de los paramentos
 for var in "$@"; do
@@ -77,28 +72,13 @@ if $INFORMA; then
     array=(${lastloguins//&/ })
     for i in "${!array[@]}";do
       log=$(echo "${array[i]}")
-      echo $log
       Loguindate=$(echo $log | awk -F '_' '{print $2}' | awk -F 'T' '{print $1}')
       limitdate=$(date --iso-8601 -d 'now + 7 days')
-      echo "$Loguindate < $limitdate"
       if [[ "$Loguindate" < "$limitdate" ]]; then
-        echo "Statement is true"
-      else
-        echo "Statement is false"
+          #falta sumar els tems i preparar el report
       fi
-
     done
   done
-
-
-
+fi
 
 exit 0
-
-
-
-
-
-
-
-fi
