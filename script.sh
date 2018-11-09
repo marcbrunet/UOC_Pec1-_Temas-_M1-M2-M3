@@ -70,15 +70,22 @@ if $INFORMA; then
   for user in $USERS; do
     lastloguins=$(sudo last --time-format iso $user  | tr '\t(' '\t ' | tr ')\t\n' '\n '|  awk '{if ($1!="wtmp") if($1!="reboot") print $1"-"$2"-"$7"_"$4}')
     array=(${lastloguins//&/ })
+    EPOCH='jan 1 1970'
+    sum=0
     for i in "${!array[@]}";do
       log=$(echo "${array[i]}")
       Loguindate=$(echo $log | awk -F '_' '{print $2}' | awk -F 'T' '{print $1}')
-      limitdate=$(date --iso-8601 -d 'now + 7 days')
-      if [[ "$Loguindate" < "$limitdate" ]]; then
-          #falta sumar els tems i preparar el report
+      limitdate=$(date --iso-8601 -d 'now - 8 days')
+      if [[ "$Loguindate" > "$limitdate" ]]; then
+          date=$(echo $log | awk -F '_' '{print $1}'| awk -F '-' '{if ($3!="in")print $3":00"}')
+          sum="$(date -u -d "$EPOCH $date" +%s) + $sum"
       fi
     done
+    if [[ ${#array[@]} > 0 ]]; then
+      secons=$(echo $sum|bc)
+      connecttime=$(date -u -d @$secons +"%T")
+      echo $user '  ' $connecttime '  ' ${#array[@]}
+    fi
   done
 fi
-
 exit 0
